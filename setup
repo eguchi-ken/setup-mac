@@ -13,8 +13,9 @@ git clone git@github.com:eguchi-ken/dotemacs2.git
 mkdir -p ~/.emacs.d/
 ln -s ~/work/dotemacs2/init.el ~/.emacs.d/init.el
 
-echo '~/.bash_profile に rbenv の初期設定を書き込みます'
-echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+echo '~/.bash_profile を置き換えます'
+git clone git@github.com:eguchi-ken/setup-mac
+ln -s ~/work/setup-mac ~/.bash_profile
 
 echo 'rbenv を使って ruby2.5.5 をインストールします'
 rbenv install 2.5.5
