@@ -3,23 +3,23 @@
 mkdir -p ~/work
 cd ~/work
 
-echo 'git をインストールします'
+echo '\e[32mgit をインストールします'
 brew install git
 
 git clone git@github.com:eguchi-ken/setup-mac 2>/dev/null
 cd ~/work/setup-mac
 git pull origin master
 
-echo '各パッケージ/アプリケーションをインストールします'
+echo '\e[32m各パッケージ/アプリケーションをインストールします'
 brew bundle -v
 
-echo '~/.bash_profile を置き換えます'
+echo '\e[32m~/.bash_profile を置き換えます'
 cat ~/work/setup-mac/bash_profile.sh  > ~/.bash_profile
 
 cd ~/work
 
 
-echo 'emacs を設定します'
+echo '\e[32memacs を設定します'
 git clone git@github.com:eguchi-ken/dotemacs2.git 2>/dev/null
 cd ~/work/dotemacs2/
 git pull origin master
@@ -28,6 +28,6 @@ ln -s init.el ~/.emacs.d/init.el
 
 cd ~/work
 
-echo 'rbenv を使って ruby2.5.5 をインストールします'
+echo '\e[32mrbenv を使って ruby2.5.5 をインストールします'
 rbenv install 2.5.5
 rbenv versions
