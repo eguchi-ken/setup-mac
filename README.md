@@ -5,8 +5,7 @@ command+space で spotlight を呼び出して terminal
 
 ```
 curl https://raw.githubusercontent.com/eguchi-ken/setup-mac/master/setup > setup
-chmod +x setup
-./setup
+bash ./setup
 ```
 
 # 3. setup karabiner-elements
