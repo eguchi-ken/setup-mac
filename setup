@@ -27,7 +27,7 @@ cd ~/work/setup-mac
 [ ! -s ~/.git_commit_template ] && cp ./.git_commit_template ~/
 
 git pull origin master
-git checkout --quiet origin/master
+git reset --hard origin/master
 
 if [ ! -s ~/.bash_profile ]; then
   echo -e "${GREEN}~/.bash_profile を作成します${NOCOLOR}"
@@ -52,6 +52,7 @@ echo -e "${GREEN}emacs を設定します${NOCOLOR}"
 git clone git@github.com:eguchi-ken/dotemacs2.git 2>/dev/null
 cd ~/work/dotemacs2/
 git pull origin master
+git reset --hard origin/master
 mkdir -p ~/.emacs.d/
 ln -s ~/work/dotemacs2/init.el ~/.emacs.d/
 
