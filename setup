@@ -1,0 +1,9 @@
+#!/bin/bash
+
+brew bundle -v
+
+echo '~/.bash_profile に rbenv の初期設定を書き込みます'
+echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+
+rbenv install 2.5.5
+rbenv versions
