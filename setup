@@ -1,20 +1,21 @@
 #!/bin/bash
+NOCOLOR='\033[0m'
 GREEN='\033[0;32m'
 
 mkdir -p ~/work
 cd ~/work
 
 if [ -s `which brew` ]; then
-    echo -e "${GREEN}brew はインストールされています"
+    echo -e "${GREEN}brew はインストールされています${NOCOLOR}"
 else
-    echo -e "${GREEN}brew をインストールしてください"
+    echo -e "${GREEN}brew をインストールしてください${NOCOLOR}"
     exit
 fi
 
 if [ -s `which git` ]; then
-    echo -e "${GREEN}git はインストールされています"
+    echo -e "${GREEN}git はインストールされています${NOCOLOR}"
 else
-    echo -e "${GREEN}git をインストールします"
+    echo -e "${GREEN}git をインストールします${NOCOLOR}"
     brew install git
 fi
 
@@ -22,28 +23,28 @@ git clone git@github.com:eguchi-ken/setup-mac 2>/dev/null
 cd ~/work/setup-mac
 git pull origin master
 
-echo -e '${GREEN}~/.bash_profile を置き換えます'
+echo -e "${GREEN}~/.bash_profile を置き換えます${NOCOLOR}"
 cat ~/work/setup-mac/bash_profile.sh  > ~/.bash_profile
 
 
-if [ -s "~/.ssh/ssh_config" ]; then
-    echo -e '${GREEN}~/.ssh/ssh_config はすでにあります'
+if [ -s ~/.ssh/config ]; then
+    echo -e "${GREEN}~/.ssh/config はすでにあります${NOCOLOR}"
 else
-    echo -e '${GREEN}~/.ssh/ssh_config を作成します'
-    cat ~/work/setup-mac/ssh_config > ~/.ssh/ssh_config
+    echo -e "${GREEN}~/.ssh/config を作成します${NOCOLOR}"
+    cat ~/work/setup-mac/ssh_config > ~/.ssh/config
 
-    echo -e '${GREEN}ssh-agent を有効化します'
+    echo -e "${GREEN}ssh-agent を有効化します${NOCOLOR}"
     eval "$(ssh-agent -s)"
     ssh-add -K ~/.ssh/id_rsa
 fi
 
-echo -e '${GREEN}各パッケージ/アプリケーションをインストールします'
+echo -e "${GREEN}各パッケージ/アプリケーションをインストールします${NOCOLOR}"
 brew bundle -v
 
 cd ~/work
 
 
-echo -e '${GREEN}emacs を設定します'
+echo -e "${GREEN}emacs を設定します${NOCOLOR}"
 git clone git@github.com:eguchi-ken/dotemacs2.git 2>/dev/null
 cd ~/work/dotemacs2/
 git pull origin master
@@ -52,6 +53,6 @@ ln -s init.el ~/.emacs.d/init.el
 
 cd ~/work
 
-echo -e '${GREEN}rbenv を使って ruby2.5.5 をインストールします'
+echo -e "${GREEN}rbenv を使って ruby2.5.5 をインストールします${NOCOLOR}"
 rbenv install 2.5.5
 rbenv versions
