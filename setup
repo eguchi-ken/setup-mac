@@ -22,6 +22,10 @@ fi
 
 echo -e "${GREEN}git pull eguchi-ken/setup-mac${NOCOLOR}"
 cd ~/work/setup-mac
+[ ! -s ~/.gitconfig ] && cp ./.gitconfig ~/
+[ ! -s ~/.gitignore_global ] && cp ./.gitignore_global ~/
+[ ! -s ~/.git_commit_template ] && cp ./.git_commit_template ~/
+
 git pull origin master
 git checkout --quiet origin/master
 

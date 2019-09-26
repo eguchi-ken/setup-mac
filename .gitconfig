@@ -1,0 +1,9 @@
+[user]
+	name = eguchi.ken
+	email = eguchi.ken@moneyforward.co.jp
+[commit]
+	template = ~/.git_commit_template
+[core]
+	excludesfile = ~/.gitignore_global
+[github]
+	user = eguchi-ken
