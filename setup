@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# git clone してなくてもこのファイルをコピペして実行できるようにするため Brewfile を取得する
+echo 'Brewfile を取得し、各パッケージ/アプリケーションをインストールします'
+# # git clone してなくてもこのファイルをコピペして実行できるようにするため Brewfile を取得する
 curl https://raw.githubusercontent.com/eguchi-ken/setup-mac/master/Brewfile > Brewfile
 brew bundle -v
 
 echo '~/.bash_profile に rbenv の初期設定を書き込みます'
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 
+echo 'rbenv を使って ruby2.5.5 をインストールします'
 rbenv install 2.5.5
 rbenv versions
