@@ -5,16 +5,12 @@ GREEN='\033[0;32m'
 mkdir -p ~/work
 cd ~/work
 
-if [ -s `which brew` ]; then
-    echo -e "${GREEN}brew はインストールされています${NOCOLOR}"
-else
+if [ ! -s `which brew` ]; then
     echo -e "${GREEN}brew をインストールしてください${NOCOLOR}"
     exit
 fi
 
-if [ -s `which git` ]; then
-    echo -e "${GREEN}git はインストールされています${NOCOLOR}"
-else
+if [ ! -s `which git` ]; then
     echo -e "${GREEN}git をインストールします${NOCOLOR}"
     brew install git
 fi
@@ -29,13 +25,12 @@ cd ~/work/setup-mac
 git pull origin master
 git checkout origin/master
 
-echo -e "${GREEN}~/.bash_profile を置き換えます${NOCOLOR}"
-cat ~/work/setup-mac/bash_profile.sh  > ~/.bash_profile
+if [ ! -s ~/.bash_profile ]; then
+  echo -e "${GREEN}~/.bash_profile を作成します${NOCOLOR}"
+  cat ~/work/setup-mac/bash_profile.sh  > ~/.bash_profile
+fi
 
-
-if [ -s ~/.ssh/config ]; then
-    echo -e "${GREEN}~/.ssh/config はすでにあります${NOCOLOR}"
-else
+if [ ! -s ~/.ssh/config ]; then
     echo -e "${GREEN}~/.ssh/config を作成します${NOCOLOR}"
     cat ~/work/setup-mac/ssh_config > ~/.ssh/config
 
