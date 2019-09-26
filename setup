@@ -1,9 +1,17 @@
 #!/bin/bash
 
+mkdir -p ~/work
+cd ~/work
+
 echo 'Brewfile を取得し、各パッケージ/アプリケーションをインストールします'
 # # git clone してなくてもこのファイルをコピペして実行できるようにするため Brewfile を取得する
 curl https://raw.githubusercontent.com/eguchi-ken/setup-mac/master/Brewfile > Brewfile
 brew bundle -v
+
+echo 'emacs を設定します'
+git clone git@github.com:eguchi-ken/dotemacs2.git
+mkdir -p ~/.emacs.d/
+ln -s ~/work/dotemacs2/init.el ~/.emacs.d/init.el
 
 echo '~/.bash_profile に rbenv の初期設定を書き込みます'
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
