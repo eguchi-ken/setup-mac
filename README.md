@@ -22,6 +22,8 @@ rm ./Brefile
   - Emacs key bindings [control+keys] を有効にする
 
 # 4. setup iterm2
+JSON profile をダウンロードしてインポートするか、もしくは下記の設定を行う。
+
 - Preferences
   - Profiles
     - General
