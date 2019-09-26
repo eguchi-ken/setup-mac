@@ -19,7 +19,12 @@ else
     brew install git
 fi
 
-git clone git@github.com:eguchi-ken/setup-mac 2>/dev/null
+if [ ! -s ~/work/setup-mac ]; then
+  echo -e "${GREEN}git clone eguchi-ken/setup-mac"
+  git clone git@github.com:eguchi-ken/setup-mac
+fi
+
+echo -e "${GREEN}git pull eguchi-ken/setup-mac"
 cd ~/work/setup-mac
 git pull origin master
 git checkout origin/master
