@@ -5,3 +5,5 @@ brew "ruby-build"
 
 cask "emacs"
 cask "sequel-pro"
+cask "iterm2"
+cask "karabiner-elements"
