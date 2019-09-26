@@ -22,11 +22,23 @@ git clone git@github.com:eguchi-ken/setup-mac 2>/dev/null
 cd ~/work/setup-mac
 git pull origin master
 
-echo -e '${GREEN}各パッケージ/アプリケーションをインストールします'
-brew bundle -v
-
 echo -e '${GREEN}~/.bash_profile を置き換えます'
 cat ~/work/setup-mac/bash_profile.sh  > ~/.bash_profile
+
+
+if [ -s "~/.ssh/ssh_config" ]; then
+    echo -e '${GREEN}~/.ssh/ssh_config はすでにあります'
+else
+    echo -e '${GREEN}~/.ssh/ssh_config を作成します'
+    cat ~/work/setup-mac/ssh_config > ~/.ssh/ssh_config
+
+    echo -e '${GREEN}ssh-agent を有効化します'
+    eval "$(ssh-agent -s)"
+    ssh-add -K ~/.ssh/id_rsa
+fi
+
+echo -e '${GREEN}各パッケージ/アプリケーションをインストールします'
+brew bundle -v
 
 cd ~/work
 
