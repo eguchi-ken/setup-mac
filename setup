@@ -27,7 +27,7 @@ cd ~/work/setup-mac
 [ ! -s ~/.git_commit_template ] && cp ./.git_commit_template ~/
 
 git pull origin master
-git checkout --quiet origin/master
+git reset --hard origin/master
 
 if [ ! -s ~/.bash_profile ]; then
   echo -e "${GREEN}~/.bash_profile を作成します${NOCOLOR}"
