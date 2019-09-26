@@ -23,7 +23,7 @@ fi
 echo -e "${GREEN}git pull eguchi-ken/setup-mac"
 cd ~/work/setup-mac
 git pull origin master
-git checkout origin/master
+git checkout --quiet origin/master
 
 if [ ! -s ~/.bash_profile ]; then
   echo -e "${GREEN}~/.bash_profile を作成します${NOCOLOR}"
