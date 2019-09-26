@@ -3,19 +3,20 @@
 mkdir -p ~/work
 cd ~/work
 
+echo 'git をインストールします'
+brew install git
+
 echo 'Brewfile を取得し、各パッケージ/アプリケーションをインストールします'
-# # git clone してなくてもこのファイルをコピペして実行できるようにするため Brewfile を取得する
-curl https://raw.githubusercontent.com/eguchi-ken/setup-mac/master/Brewfile > Brewfile
-brew bundle -v
+git clone git@github.com:eguchi-ken/setup-mac
+brew bundle -v --file=~/work/setup-mac/Brewfile
+
+echo '~/.bash_profile を置き換えます'
+cat ~/work/setup-mac/bash_profile.sh  > ~/.bash_profile
 
 echo 'emacs を設定します'
 git clone git@github.com:eguchi-ken/dotemacs2.git
 mkdir -p ~/.emacs.d/
 ln -s ~/work/dotemacs2/init.el ~/.emacs.d/init.el
-
-echo '~/.bash_profile を置き換えます'
-git clone git@github.com:eguchi-ken/setup-mac
-ln -s ~/work/setup-mac ~/.bash_profile
 
 echo 'rbenv を使って ruby2.5.5 をインストールします'
 rbenv install 2.5.5

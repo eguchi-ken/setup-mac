@@ -7,10 +7,6 @@ command+space で spotlight を呼び出して terminal
 curl https://raw.githubusercontent.com/eguchi-ken/setup-mac/master/setup > setup
 chmod +x setup
 ./setup
-
-# remove woring file
-rm ./setup
-rm ./Brefile
 ```
 
 # 3. setup karabiner-elements
