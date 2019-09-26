@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# git clone してなくてもこのファイルをコピペして実行できるようにするため Brewfile を取得する
+curl https://raw.githubusercontent.com/eguchi-ken/setup-mac/master/Brewfile > Brewfile
 brew bundle -v
 
 echo '~/.bash_profile に rbenv の初期設定を書き込みます'
