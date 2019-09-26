@@ -1,10 +1,22 @@
 #!/bin/bash
+GREEN='\033[0;32m'
 
 mkdir -p ~/work
 cd ~/work
 
-echo '\e[32mgit をインストールします'
-brew install git
+if [ -s `which brew` ]; then
+    echo -e "${GREEN}brew はインストールされています"
+else
+    echo -e "${GREEN}brew をインストールしてください"
+    exit
+fi
+
+if [ -s `which git` ]; then
+    echo -e "${GREEN}git はインストールされています"
+else
+    echo -e "${GREEN}git をインストールします"
+    brew install git
+fi
 
 git clone git@github.com:eguchi-ken/setup-mac 2>/dev/null
 cd ~/work/setup-mac
