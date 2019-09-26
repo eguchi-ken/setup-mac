@@ -22,16 +22,16 @@ git clone git@github.com:eguchi-ken/setup-mac 2>/dev/null
 cd ~/work/setup-mac
 git pull origin master
 
-echo '\e[32m各パッケージ/アプリケーションをインストールします'
+echo -e '${GREEN}各パッケージ/アプリケーションをインストールします'
 brew bundle -v
 
-echo '\e[32m~/.bash_profile を置き換えます'
+echo -e '${GREEN}~/.bash_profile を置き換えます'
 cat ~/work/setup-mac/bash_profile.sh  > ~/.bash_profile
 
 cd ~/work
 
 
-echo '\e[32memacs を設定します'
+echo -e '${GREEN}emacs を設定します'
 git clone git@github.com:eguchi-ken/dotemacs2.git 2>/dev/null
 cd ~/work/dotemacs2/
 git pull origin master
@@ -40,6 +40,6 @@ ln -s init.el ~/.emacs.d/init.el
 
 cd ~/work
 
-echo '\e[32mrbenv を使って ruby2.5.5 をインストールします'
+echo -e '${GREEN}rbenv を使って ruby2.5.5 をインストールします'
 rbenv install 2.5.5
 rbenv versions
