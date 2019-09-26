@@ -52,7 +52,3 @@ mkdir -p ~/.emacs.d/
 ln -s init.el ~/.emacs.d/init.el
 
 cd ~/work
-
-echo -e "${GREEN}rbenv を使って ruby2.5.5 をインストールします${NOCOLOR}"
-rbenv install 2.5.5
-rbenv versions
