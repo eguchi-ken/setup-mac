@@ -4,8 +4,8 @@ export PATH="/usr/local/sbin:$PATH"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[ -s "direnv" ] && eval "$(direnv hook bash)"
-[ -s "rbenv" ] && eval "$(rbenv init -)"
+[ -s `which direnv` ] && eval "$(direnv hook bash)"
+[ -s `which rbenv` ] && eval "$(rbenv init -)"
 
 export EDITOR=emacsclient
 alias be="bundle exec"
