@@ -52,6 +52,7 @@ echo -e "${GREEN}emacs を設定します${NOCOLOR}"
 git clone git@github.com:eguchi-ken/dotemacs2.git 2>/dev/null
 cd ~/work/dotemacs2/
 git pull origin master
+git reset --hard origin/master
 mkdir -p ~/.emacs.d/
 ln -s ~/work/dotemacs2/init.el ~/.emacs.d/
 
