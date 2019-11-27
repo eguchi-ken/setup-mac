@@ -1,6 +1,7 @@
 brew "zsh"
 brew "rbenv"
 brew "ruby-build"
+brew "hub"
 
 cask "emacs"
 cask "sequel-pro"
