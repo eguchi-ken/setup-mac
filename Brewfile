@@ -9,6 +9,7 @@ cask "iterm2"
 cask "karabiner-elements"
 cask "android-studio"
 cask "google-japanese-ime"
+cask "bettertouchtool"
 
 # Emacs で絵文字を出すためのフォント
 cask "font-symbola"
