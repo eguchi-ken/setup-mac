@@ -1,6 +1,3 @@
-
-
-#==== Emojis ====
 # 🆕  新規実装
 # 🏥  バグ修正
 # 🤘  機能改善
@@ -15,4 +12,17 @@
 # 🆙  依存パッケージなどのアップデート
 # ✅  PR指摘反映
 # ✏  コメントとかドキュメントの編集とか
-# ⚠ 仮の実装
+# ⚠ 仮の実装/注意を要する実装
+
+# 例文
+# 🆕 Add model of
+# 🆕 Add controller of
+# 🆕 Add view of
+# 💚 Add spec of
+# ♻️ Use shorthand method
+# ♻️ Extract method
+# ♻️ Extract class
+# ♻️ Extract module
+# ♻️ Inline method
+# 👮 Fix rubocop warnings
+# 👮 Fix eslint warnings
