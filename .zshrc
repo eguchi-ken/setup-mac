@@ -1,6 +1,4 @@
 # 環境を問わない
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/bin:$PATH"
 export HISTSIZE=1000
 export SAVEHIST=10000
 setopt HIST_IGNORE_DUPS
@@ -24,7 +22,6 @@ alias be="bundle exec"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 function load_nvm() {
-    export NVM_DIR="$HOME/.nvm"
     source "$NVM_DIR/nvm.sh"
 }
 
