@@ -21,10 +21,16 @@ alias be="bundle exec"
 [ -s `which gls` ] && alias ls="gls --color"
 [ -s `which rbenv` ] && eval "$(rbenv init -)"
 [ -s `which direnv` ] && eval "$(direnv hook zsh)"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 function load_nvm() {
     export NVM_DIR="$HOME/.nvm"
     source "$NVM_DIR/nvm.sh"
+}
+
+function badge() {
+    printf "\e]1337;SetBadgeFormat=%s\a"\
+    $(echo -n "$1" | base64)
 }
 
 ### https://github.com/zdharma/zinit
