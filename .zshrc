@@ -8,22 +8,24 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt HIST_NO_STORE
-
 autoload -Uz colors && colors
 PROMPT="%{${fg[green]}%}%n$ %{${reset_color}%}"
 
 # 環境依存
 export EDITOR=emacsclient
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export RSPEC_RETRY_RETRY_COUNT=1
+export SPEC_OPTS="--format documentation"
+export DIRENV_LOG_FORMAT="" # direnv を静かにする
+alias be="bundle exec"
 [ -s `which gls` ] && alias ls="gls --color"
-eval "$(rbenv init -)"
+[ -s `which rbenv` ] && eval "$(rbenv init -)"
+[ -s `which direnv` ] && eval "$(direnv hook zsh)"
 
 function load_nvm() {
     export NVM_DIR="$HOME/.nvm"
     source "$NVM_DIR/nvm.sh"
 }
-
-alias be="bundle exec"
 
 ### https://github.com/zdharma/zinit
 ### Added by Zinit's installer
