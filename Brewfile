@@ -1,4 +1,3 @@
-brew "zsh"
 brew "rbenv"
 brew "ruby-build"
 brew "hub"
