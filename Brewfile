@@ -2,6 +2,8 @@ brew "rbenv"
 brew "ruby-build"
 brew "hub"
 
+brew "zplug"
+
 cask "emacs"
 
 # mac OS では安定版が安定してないので nightly を使う
