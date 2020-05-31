@@ -18,8 +18,10 @@
 # 🆕 Add model of
 # 🆕 Add controller of
 # 🆕 Add view of
+# 🆕 Run generator command
 # 💚 Add spec of
 # ♻️ Use shorthand method
+# ♻️ Remove unused method/variable
 # ♻️ Extract method
 # ♻️ Extract class
 # ♻️ Extract module
