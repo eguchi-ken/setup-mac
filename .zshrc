@@ -15,32 +15,36 @@ PROMPT="%{${fg[green]}%}%n$ %{${reset_color}%}"
 # 環境依存
 export EDITOR=emacsclient
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+[ -s `which gls` ] && alias ls="gls --color"
+eval "$(rbenv init -)"
 
 function load_nvm() {
     export NVM_DIR="$HOME/.nvm"
     source "$NVM_DIR/nvm.sh"
 }
 
-function load_zplug() {
-    export ZPLUG_HOME=/usr/local/opt/zplug
-    source $ZPLUG_HOME/init.zsh
-}
-
-function install_zpluged_packages() {
-    # Install plugins if there are plugins that have not been installed
-    if ! zplug check --verbose; then
-        printf "Install? [y/N]: "
-        if read -q; then
-            echo; zplug install
-        fi
-    fi
-}
-
-load_zplug
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-install_zpluged_packages
-zplug load --verbose
-
 alias be="bundle exec"
+
+### https://github.com/zdharma/zinit
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-bin-gem-node \
+    zsh-users/zsh-autosuggestions \
+    zdharma/fast-syntax-highlighting
+### End of Zinit's installer chunk
