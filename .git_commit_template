@@ -21,10 +21,13 @@
 # 🆕 Run generator command
 # 💚 Add spec of
 # ♻️ Use shorthand method
-# ♻️ Remove unused method/variable
 # ♻️ Extract method
 # ♻️ Extract class
 # ♻️ Extract module
 # ♻️ Inline method
+# ♻️ Remove stale method/class
+# ♻️ Remove unused method
+# ♻️ Remove table which is no longer used
 # 👮 Fix rubocop warnings
 # 👮 Fix eslint warnings
+# 👮 Supress warnings
