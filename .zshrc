@@ -25,6 +25,8 @@ function load_nvm() {
     source "$NVM_DIR/nvm.sh"
 }
 
+[ -v STARTUP_NVM ] && load_nvm && nvm use
+
 function badge() {
     printf "\e]1337;SetBadgeFormat=%s\a"\
     $(echo -n "$1" | base64)
