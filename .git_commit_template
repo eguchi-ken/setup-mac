@@ -30,4 +30,4 @@
 # ♻️ Remove table which is no longer used
 # 👮 Fix rubocop warnings
 # 👮 Fix eslint warnings
-# 👮 Supress warnings
+# 👮 Suppress warnings
