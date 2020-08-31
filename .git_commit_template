@@ -1,17 +1,17 @@
-# 🆕  新規実装
-# 🏥  バグ修正
-# 🤘  機能改善
-# ✨  部分的な機能追加
-# 🎉  盛大に祝うべき大きな機能追加
-# ♻️  リファクタリング
-# 👮  アラート等の修正
-# 🚿  不要な機能・使われなくなった機能の削除
-# 💚  テストやCIの修正・改善
-# 👕  Lintエラーの修正やコードスタイルの修正
-# 🚀  パフォーマンス改善
-# 🆙  依存パッケージなどのアップデート
-# ✅  PR指摘反映
-# ✏  コメントとかドキュメントの編集とか
+# 🆕 新規実装
+# 🏥 バグ修正
+# 🤘 機能改善
+# ✨ 部分的な機能追加
+# 🎉 盛大に祝うべき大きな機能追加
+# ♻ リファクタリング
+# 👮 アラート等の修正
+# 🚿 不要な機能・使われなくなった機能の削除
+# 💚 テストやCIの修正・改善
+# 👕 Lintエラーの修正やコードスタイルの修正
+# 🚀 パフォーマンス改善
+# 🆙 依存パッケージなどのアップデート
+# ✅ PR指摘反映
+# ✏ コメントとかドキュメントの編集とか
 # ⚠ 仮の実装/注意を要する実装
 
 # 例文
@@ -20,14 +20,14 @@
 # 🆕 Add view of
 # 🆕 Run generator command
 # 💚 Add spec of
-# ♻️ Use shorthand method
-# ♻️ Extract method
-# ♻️ Extract class
-# ♻️ Extract module
-# ♻️ Inline method
-# ♻️ Remove stale method/class
-# ♻️ Remove unused method
-# ♻️ Remove table which is no longer used
+# ♻ Use shorthand method
+# ♻ Extract method
+# ♻ Extract class
+# ♻ Extract module
+# ♻ Inline method
+# ♻ Remove stale method/class
+# ♻ Remove unused method
+# ♻ Remove table which is no longer used
 # 👮 Fix rubocop warnings
 # 👮 Fix eslint warnings
 # 👮 Suppress warnings
